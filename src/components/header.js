@@ -85,10 +85,11 @@ export default function Header() {
                 navItems.map((navItem) => (
                   <li key={navItem.id}>
                     {navItem.navItemType === "Group" ? (
-                      <NavItemGroup
-                        name={navItem.name}
-                        navItems={navItem.navItems}
-                      />
+                      // <NavItemGroup
+                      //   name={navItem.name}
+                      //   navItems={navItem.navItems}
+                      // />
+                      <></>
                     ) : (
                       <NavLink to={navItem.href}>{navItem.text}</NavLink>
                     )}
@@ -96,7 +97,7 @@ export default function Header() {
                 ))}
             </FlexList>
           </nav>
-          <div>{cta && <Button to={cta.href}>{cta.text}</Button>}</div>
+          {/* <div>{cta && <Button to={cta.href}>{cta.text}</Button>}</div> */}
         </Flex>
       </Container>
       <Container className={mobileHeaderNavWrapper[isOpen ? "open" : "closed"]}>

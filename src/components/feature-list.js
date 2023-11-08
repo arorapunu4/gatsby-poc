@@ -14,9 +14,12 @@ export default function FeatureList(props) {
           </Heading>
           {props.text && <Text>{props.text}</Text>}
         </Box>
+        <div className="feature" style={{ display: 'flex'}}>
         {props.content.map((feature, i) => (
           <Feature key={feature.id} {...feature} flip={Boolean(i % 2)} />
         ))}
+        </div>
+     
       </Box>
     </Container>
   )

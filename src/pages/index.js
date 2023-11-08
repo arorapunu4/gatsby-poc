@@ -13,6 +13,7 @@ export default function Homepage(props) {
       {homepage.blocks.map((block) => {
         const { id, blocktype, ...componentProps } = block
         const Component = sections[blocktype] || Fallback
+        {console.log(Component,"Component")}
         return <Component key={id} {...componentProps} />
       })}
     </Layout>
@@ -37,12 +38,11 @@ export const query = graphql`
         blocktype
         ...HomepageHeroContent
         ...HomepageFeatureListContent
-        ...HomepageCtaContent
-        ...HomepageLogoListContent
-        ...HomepageTestimonialListContent
+        ...HomepageProductListContent
+        ...HomepageCtaContent 
         ...HomepageBenefitListContent
         ...HomepageStatListContent
-        ...HomepageProductListContent
+        ...HomepageTestimonialListContent
       }
     }
   }
